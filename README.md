@@ -55,7 +55,7 @@ Postman collection included:
 - **API Collection** → for REST endpoints (authentication, monitors, 2FA, etc.)
 - **Socket Collection** → for testing WebSocket endpoints
 
-> 💡 Import both collections in Postman for full testing capability.
+> 💡 Import API collection in Postman for full testing capability.
 
 ### 🧩 How to Use the Socket Collection
 
