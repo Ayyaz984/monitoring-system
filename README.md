@@ -37,6 +37,9 @@ JWT_2FA_TOKEN_EXPIRATION_MINUTES=5
 ```bash
 npm run seed
 ```
+> 🧠 Default seeded credentials:
+> - Email: `muhammadayyaz984@gmail.com`
+> - Password: `Password123`
 
 ### 5️⃣ Run the Project
 ```bash
@@ -47,12 +50,33 @@ npm run dev
 
 ## 📬 Postman Collections
 
-Two Postman collections are included:
+Postman collection included:
 
 - **API Collection** → for REST endpoints (authentication, monitors, 2FA, etc.)
-- **Socket Collection** → for WebSocket event testing (real-time updates and analytics)
+- **Socket Collection** → for testing WebSocket endpoints
 
-> 💡 Import both collections in Postman for complete testing.
+> 💡 Import both collections in Postman for full testing capability.
+
+### 🧩 How to Use the Socket Collection
+
+- Open Postman → click **New** → select **Socket.IO Request**
+- Enter the URL: `http://localhost:4069` (or your server’s port)
+- Go to the **Headers** tab and add:
+  ```
+  authorization: <your_access_token>
+  ```
+- In the **Message** tab, paste:
+  ```json
+  { "monitorId": "68e1483540369d25af28657c" }
+  ```
+  (Replace with your actual monitor ID)
+- In the **Events** tab, listen to:
+  - `monitor_created`
+  - `monitor_analytics`
+  - `monitor_updated`
+  - `monitor_deleted`
+  - `monitor_response`
+- To receive analytics for a specific monitor, emit the `join_monitor` event.
 
 ---
 
@@ -108,10 +132,7 @@ To receive real-time analytics for a specific monitor:
 ```json
   { "monitorId": "<your-monitor-id>" }
 ```
-
 3. You’ll start receiving live analytics data for that monitor (response times, uptime %, etc.) in real time.
-
----
 
 ## 🧑‍💻 Tech Stack
 
@@ -144,10 +165,6 @@ Include the following screenshots in your repo’s `/screenshots` folder:
 |----------|-------------|
 | Postman API Collection | `screenshots/postman-api-collection.png` |
 | 2FA QR Code Setup | `screenshots/2fa-qr-code.png` |
-| 2FA Verification | `screenshots/2fa-verification.png` |
-| WebSocket Connection | `screenshots/socket-connection.png` |
-| Real-Time Monitor Updates | `screenshots/monitor-updates.png` |
-| Real-Time Analytics | `screenshots/analytics.png` |
 
 ---
 
