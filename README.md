@@ -9,8 +9,8 @@ It includes **user authentication**, **two-factor authentication (2FA)**, and **
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Ayyaz984/backend-monitoring-system.git
-cd backend-monitoring-system
+git clone https://github.com/Ayyaz984/monitoring-system.git
+cd monitoring-system
 ```
 
 ### 2️⃣ Install Dependencies
